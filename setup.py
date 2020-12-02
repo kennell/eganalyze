@@ -1,9 +1,10 @@
 from setuptools import setup
+from eganalyze import __version__
 
 
 setup(
     name='eganalyze',
-    version='1.0.0',
+    version=__version__,
     packages = ['eganalyze'],
     author='Kevin Kennell',
     author_email='kevin@kennell.de',

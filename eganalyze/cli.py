@@ -1,8 +1,12 @@
 import click
 import pandas as pd
+from eganalyze import __version__
 
 
 @click.group()
+@click.version_option(
+    __version__, '--version', message="%(prog)s, version %(version)s"
+)
 def main():
     pass
 
