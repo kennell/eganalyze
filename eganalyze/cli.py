@@ -19,10 +19,9 @@ def main(input):
     # Calculate weighted interest rate
     df['interest_rate_weighted'] = (df['outstanding_principal_percentage'] * df['Interest Rate'])
 
-    # Output
     click.echo(
-        'Average interest rate: {0:.4f}%'.format(float(df['Interest Rate'].mean()))
+        'Mean interest rate: {0:.4f}%'.format(float(df['Interest Rate'].mean()))
     )
     click.echo(
-        'Weighted average interest rate: {0:.4f}%'.format(float(df['interest_rate_weighted'].sum()))
+        'Weighted mean interest rate: {0:.4f}%'.format(float(df['interest_rate_weighted'].sum()))
     )
