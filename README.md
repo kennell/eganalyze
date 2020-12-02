@@ -27,6 +27,5 @@ pip install eganalyze
 3. Run `eganalyze` on the file:
 
 ````console
-eganalyze portfolio.csv
-
+eganalyze analyze portfolio.csv
 ````

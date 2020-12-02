@@ -2,9 +2,14 @@ import click
 import pandas as pd
 
 
-@click.command()
+@click.group()
+def main():
+    pass
+
+
+@main.command()
 @click.argument('input', type=click.Path(exists=True))
-def main(input):
+def analyze(input):
     df = pd.read_csv(input)
 
     # Extract Loan ID from Project Name
