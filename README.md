@@ -10,7 +10,13 @@ At this point the functionality is very limited:
 
 * add column with loan ID (e.g. "EE6452")
 * add column with loan URL
-* calculate weighted average interest rate
+* calculate the following key performance indicators
+    * mean ltv
+    * outstanding mean ltv
+    * outstanding weighted mean ltv
+    * mean interest rate
+    * outstanding mean interest rate
+    * outstanding weighted mean interest rate     
 
 ### How do i install it?
 
@@ -24,8 +30,14 @@ pip install eganalyze
 
 2. Go to your [Portfolio Overview](https://estateguru.co/portal/portfolio/details) and download the CSV file
 
-3. Run `eganalyze` on the file:
+3. Run `eganalyze` on the file to print key performance indicators:
 
-````console
-eganalyze analyze portfolio.csv
-````
+```console
+$ eganalyze analyze portfolio.csv
+Mean interest rate: 11.04%
+Outstanding mean interest rate: 10.79%
+Outstanding weighted mean interest rate: 10.75%
+Mean LTV: 54.23%
+Outstanding mean LTV: 54.35%
+Outstanding weighted mean LTV: 54.11%
+```
