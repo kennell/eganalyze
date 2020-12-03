@@ -1,3 +1,4 @@
+import pandas as pd
 from eganalyze import settings
 
 
@@ -6,7 +7,14 @@ class EgData:
     def __init__(self, df):
         self.df = df
         self._normalize_column_names()
+        self._parse_dates()
         self._enrich()
+        self.df = self.df.sort_values(by='date_funded', ascending=False)
+
+    def _parse_dates(self):
+        datetime_columns = ['date_funded', 'next_payment_date', 'maturity_date', 'repaid_date']
+        for col in datetime_columns:
+            self.df[col] = pd.to_datetime(self.df[col])
 
     def _normalize_column_names(self):
         # "Interest Rate" becomes "interest_rate"
