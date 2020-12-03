@@ -6,11 +6,14 @@ eganalyze is a tool/library for analyzing [Estateguru](https://estateguru.co/) p
 
 ### What can it do?
 
-At this point the functionality is very limited:
+At this point the functionality is very limited. Currently it can
 
-* add column with loan ID (e.g. "EE6452")
-* add column with loan URL
-* calculate the following key performance indicators
+* Enrich the CSV with
+    * normalize column names
+    * add column with loan ID (e.g. "EE6452")
+    * add column with loan URL
+
+* Calculate the following key performance indicators
     * mean ltv
     * outstanding mean ltv
     * outstanding weighted mean ltv
@@ -40,4 +43,20 @@ Outstanding weighted mean interest rate: 10.75%
 Mean LTV: 54.23%
 Outstanding mean LTV: 54.35%
 Outstanding weighted mean LTV: 54.11%
+```
+
+### Advanced usage
+
+
+```console
+$ eganalyze --help
+Usage: eganalyze [OPTIONS] COMMAND [ARGS]...
+
+Options:
+  --version  Show the version and exit.
+  --help     Show this message and exit.
+
+Commands:
+  analyze  Analyze given portfolio and print key performance indicators
+  process  Process and output to file
 ```
