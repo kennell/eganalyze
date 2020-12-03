@@ -1,6 +1,7 @@
 import click
 import pandas as pd
 from eganalyze import __version__
+from eganalyze.lib import EgData
 
 
 @click.group()
@@ -14,23 +15,12 @@ def main():
 @main.command()
 @click.argument('input', type=click.Path(exists=True))
 def analyze(input):
-    df = pd.read_csv(input)
 
-    # Extract Loan ID from Project Name
-    df['id'] = [val[-1].strip() for val in df['Project Name'].str.split(',')]
-
-    # Build URL using Loan ID
-    df['url'] = 'https://estateguru.co/portal/investment/single/' + df['id']
-
-    # Calculate percentage of outstanding principal
-    df['outstanding_principal_percentage'] = (df['Outstanding principal'] / df['Outstanding principal'].sum())
-
-    # Calculate weighted interest rate
-    df['interest_rate_weighted'] = (df['outstanding_principal_percentage'] * df['Interest Rate'])
+    data = EgData(pd.read_csv(input))
 
     click.echo(
-        'Mean interest rate: {0:.4f}%'.format(float(df['Interest Rate'].mean()))
+        'Mean interest rate: {0:.4f}%'.format(data.mean_interest_rate)
     )
     click.echo(
-        'Weighted mean interest rate: {0:.4f}%'.format(float(df['interest_rate_weighted'].sum()))
+        'Weighted mean interest rate: {0:.4f}%'.format(data.weighted_mean_interest_rate)
     )
