@@ -16,5 +16,5 @@ class TestEgData(TestCase):
              'maturity_date', 'repaid_date', 'interest_rate', 'ltv', 'initial_loan_period', 'loan_period_left', 'bonus',
              'actual_return', 'outstanding_principal', 'initial_principal', 'revenue_earned', 'bonus_earned',
              'principal_repaid', 'penalties_received', 'days_late', 'id', 'url', 'outstanding_principal_percentage',
-             'interest_rate_weighted']
+             'outstanding_interest_rate_weighted']
         )
