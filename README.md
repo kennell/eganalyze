@@ -2,7 +2,7 @@
 
 eganalyze is a tool/library for analyzing [Estateguru](https://estateguru.co/) portfolios. It is still very much work in progress, check the open issues to see planned features or to contribute. 
 
-<sub>This tool is not affiliated or endorsed by, or in any way officially connected with Estateguru.</sub>
+<sub>This tool is NOT affiliated or endorsed by, or in any way officially connected with Estateguru. The tool is provided without any warranty and does not guarantee correctness, see the [license](LICENSE).</sub>
 
 ### What can it do?
 
