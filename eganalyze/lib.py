@@ -33,6 +33,25 @@ class EgData:
         # Calculate weighted interest rate
         self.df['outstanding_interest_rate_weighted'] = (self.df['outstanding_principal_percentage'] * self.df['interest_rate'])
 
+        # Calculate weighted LTV
+        self.df['outstanding_ltv_weighted'] = (self.df['outstanding_principal_percentage'] * self.df['ltv'])
+
+    # LTV
+
+    @property
+    def mean_ltv(self):
+        return float(self.df['ltv'].mean())
+
+    @property
+    def outstanding_mean_ltv(self):
+        return float(self.df[self.df.outstanding_principal > 0]['ltv'].mean())
+    
+    @property
+    def outstanding_weighted_mean_ltv(self):
+        return float(self.df['outstanding_ltv_weighted'].sum())
+
+    # Interest rate
+
     @property
     def mean_interest_rate(self):
         return float(self.df['interest_rate'].mean())

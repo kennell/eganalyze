@@ -19,11 +19,21 @@ def analyze(input):
     data = EgData(pd.read_csv(input))
 
     click.echo(
-        'Mean interest rate: {0:.4f}%'.format(data.mean_interest_rate)
+        'Mean interest rate: {0:.2f}%'.format(data.mean_interest_rate)
     )
     click.echo(
-        'Outstanding mean interest rate: {0:.4f}%'.format(data.outstanding_mean_interest_rate)
+        'Outstanding mean interest rate: {0:.2f}%'.format(data.outstanding_mean_interest_rate)
     )
     click.echo(
-        'Outstanding weighted mean interest rate: {0:.4f}%'.format(data.outstanding_weighted_mean_interest_rate)
+        'Outstanding weighted mean interest rate: {0:.2f}%'.format(data.outstanding_weighted_mean_interest_rate)
+    )
+
+    click.echo(
+        'Mean LTV: {0:.2f}%'.format(data.mean_ltv)
+    )
+    click.echo(
+        'Outstanding mean LTV: {0:.2f}%'.format(data.outstanding_mean_ltv)
+    )
+    click.echo(
+        'Outstanding weighted mean LTV: {0:.2f}%'.format(data.outstanding_weighted_mean_ltv)
     )
