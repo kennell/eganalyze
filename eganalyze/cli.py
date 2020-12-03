@@ -46,7 +46,7 @@ def analyze(input):
 @click.argument('output', type=click.Path())
 def process(input, output):
 
-    """Process and output to file"""
+    """Normalize, enrich, process CSV and output to file"""
 
     data = EgData(pd.read_csv(input))
     data.df.to_csv(output, index=False)

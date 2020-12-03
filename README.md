@@ -58,5 +58,5 @@ Options:
 
 Commands:
   analyze  Analyze given portfolio and print key performance indicators
-  process  Process and output to file
+  process  Normalize, enrich, process CSV and output to file
 ```
