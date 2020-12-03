@@ -16,6 +16,8 @@ def main():
 @click.argument('input', type=click.Path(exists=True))
 def analyze(input):
 
+    """Analyze given portfolio and print key performance indicators"""
+
     data = EgData(pd.read_csv(input))
 
     click.echo(
@@ -37,3 +39,14 @@ def analyze(input):
     click.echo(
         'Outstanding weighted mean LTV: {0:.2f}%'.format(data.outstanding_weighted_mean_ltv)
     )
+
+
+@main.command()
+@click.argument('input', type=click.Path(exists=True))
+@click.argument('output', type=click.Path())
+def process(input, output):
+
+    """Process and output to file"""
+
+    data = EgData(pd.read_csv(input))
+    data.df.to_csv(output, index=False)
