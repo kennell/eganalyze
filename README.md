@@ -1,4 +1,4 @@
-# eganalyze
+# 📈 eganalyze
 
 eganalyze is a tool/library for analyzing [Estateguru](https://estateguru.co/) portfolios. It is still very much work in progress, check the open issues to see planned features or to contribute. 
 
