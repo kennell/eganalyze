@@ -23,12 +23,16 @@ class EgData:
         self.df['outstanding_principal_percentage'] = (self.df['outstanding_principal'] / self.df['outstanding_principal'].sum())
 
         # Calculate weighted interest rate
-        self.df['interest_rate_weighted'] = (self.df['outstanding_principal_percentage'] * self.df['interest_rate'])
+        self.df['outstanding_interest_rate_weighted'] = (self.df['outstanding_principal_percentage'] * self.df['interest_rate'])
 
     @property
     def mean_interest_rate(self):
         return float(self.df['interest_rate'].mean())
 
     @property
-    def weighted_mean_interest_rate(self):
-        return float(self.df['interest_rate_weighted'].sum())
+    def outstanding_mean_interest_rate(self):
+        return float(self.df[self.df.outstanding_principal > 0]['interest_rate'].mean())
+
+    @property
+    def outstanding_weighted_mean_interest_rate(self):
+        return float(self.df['outstanding_interest_rate_weighted'].sum())

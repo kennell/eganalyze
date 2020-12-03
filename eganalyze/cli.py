@@ -22,5 +22,8 @@ def analyze(input):
         'Mean interest rate: {0:.4f}%'.format(data.mean_interest_rate)
     )
     click.echo(
-        'Weighted mean interest rate: {0:.4f}%'.format(data.weighted_mean_interest_rate)
+        'Outstanding mean interest rate: {0:.4f}%'.format(data.outstanding_mean_interest_rate)
+    )
+    click.echo(
+        'Outstanding weighted mean interest rate: {0:.4f}%'.format(data.outstanding_weighted_mean_interest_rate)
     )
