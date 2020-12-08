@@ -64,3 +64,8 @@ Commands:
   analyze  Analyze given portfolio and print key performance indicators
   process  Normalize, enrich, process CSV and output to file
 ```
+
+### Related projects
+
+* [eganalyze-web](https://github.com/kennell/eganalyze-web) - a simple web frontend for eganalyze
+ 
