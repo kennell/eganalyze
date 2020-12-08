@@ -2,6 +2,8 @@
 
 eganalyze is a tool/library for analyzing [Estateguru](https://estateguru.co/) portfolios. It is still very much work in progress, check the open issues to see planned features or to contribute. 
 
+[There is a web version that you can try here!](https://eganalyze.herokuapp.com/) 
+
 <sub>This tool is NOT affiliated or endorsed by, or in any way officially connected with Estateguru. The tool is provided without any warranty and does not guarantee correctness, see the [license](LICENSE).</sub>
 
 ### What can it do?
@@ -26,6 +28,8 @@ At this point the functionality is very limited. Currently it can
 ```
 pip install eganalyze
 ```
+
+Don't have Python? Don't want to install anything? Check the [web version](https://eganalyze.herokuapp.com/)!
 
 ### How do i use it?
 
