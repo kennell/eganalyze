@@ -33,7 +33,7 @@ Don't have Python? Don't want to install anything? Check the [web version](https
 
 ### How do i use it?
 
-1. Change your Estateguru interface to english
+1. Change your Estateguru interface to english 🇬🇧
 
 2. Go to your [Portfolio Overview](https://estateguru.co/portal/portfolio/details) and download the CSV file
 
@@ -63,6 +63,20 @@ Options:
 Commands:
   analyze  Analyze given portfolio and print key performance indicators
   process  Normalize, enrich, process CSV and output to file
+```
+
+
+### Use as a library
+
+Simply pass a pandas dataframe of the CSV to the `EgData` class:
+
+```python
+>>> import pandas as pd
+>>> from eganalyze.lib import EgData
+>>> df = pd.read_csv('/path/to/your/portfolio.csv')
+>>> data = EgData(df)
+>>> data.outstanding_mean_interest_rate
+11.353522000232
 ```
 
 ### Related projects
